@@ -4,7 +4,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useStateContext } from '../context';
 import { CustomButton, CountBox, Loader } from '../components';
 import { calculateBarPercentage, daysLeft } from '../utils';
-import { thirdweb } from '../assets';
 
 
 const CampaignDetails = ({ theme }) => {
@@ -74,11 +73,11 @@ const CampaignDetails = ({ theme }) => {
 
             <div className="mt-[20px] flex flex-row items-center flex-wrap gap-[14px]">
               <div className="w-[52px] h-[52px] flex items-center justify-center rounded-full bg-[#2c2f32] cursor-pointer">
-                <img src={thirdweb} alt="user" className="w-[60%] h-[60%] object-contain" />
+                <img src={`https://api.dicebear.com/5.x/identicon/svg?seed=${state.owner}`} alt="user" className="w-[60%] h-[60%] object-contain" />
               </div>
               <div>
                 <h4 className={`font-epilogue font-semibold text-[14px] ${theme === 'light' ? 'text-black' : 'text-white'} break-all`}>{state.owner}</h4>
-                <p className="font-epilogue font-normal text-[12px] text-[#808191]">{campaigns.length} Campaigns</p>
+                {/* <p className="font-epilogue font-normal text-[12px] text-[#808191]">{campaigns.length} Campaigns</p> */}
               </div>
             </div>
           </div>
